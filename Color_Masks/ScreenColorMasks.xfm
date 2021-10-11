@@ -1,0 +1,730 @@
+object FormColorMasks: TFormColorMasks
+  Left = 231
+  Top = 131
+  Width = 669
+  Height = 800
+  VertScrollBar.Range = 795
+  HorzScrollBar.Range = 662
+  ActiveControl = ButtonRead
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = fbsSingle
+  Caption = 'Color Masks'
+  Color = clBackground
+  Position = poScreenCenter
+  Scaled = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnMouseMove = FormMouseMove
+  PixelsPerInch = 120
+  object ButtonRead: TButton
+    Left = 8
+    Top = 4
+    Width = 75
+    Height = 25
+    Caption = 'Read'
+    TabOrder = 0
+    OnClick = ButtonReadClick
+  end
+  object PanelImage: TPanel
+    Left = 5
+    Top = 254
+    Width = 640
+    Height = 480
+    TabOrder = 1
+    object Image: TImage
+      Left = 0
+      Top = 0
+      Width = 640
+      Height = 480
+      OnMouseDown = ImageMouseDown
+      OnMouseMove = ImageMouseMove
+      OnMouseUp = ImageMouseUp
+    end
+  end
+  object ScrollBarHorizontal: TScrollBar
+    Left = 5
+    Top = 235
+    Width = 640
+    Height = 18
+    TabOrder = 2
+    Visible = False
+    OnChange = ScrollBarHorizontalChange
+  end
+  object ScrollBarVertical: TScrollBar
+    Left = 646
+    Top = 255
+    Width = 18
+    Height = 480
+    Kind = sbVertical
+    TabOrder = 3
+    Visible = False
+    OnChange = ScrollBarVerticalChange
+  end
+  object LabelXYUpperLeft: TLabel
+    Left = 8
+    Top = 219
+    Width = 97
+    Height = 16
+    Caption = 'UpperLeft = (0, 0)'
+  end
+  object LabelFileName: TLabel
+    Left = 104
+    Top = 4
+    Width = 35
+    Height = 16
+    Caption = 'File = '
+  end
+  object LabelResolution: TLabel
+    Left = 104
+    Top = 20
+    Width = 77
+    Height = 16
+    Caption = 'Resolution = '
+  end
+  object LabelXYLowerRight: TLabel
+    Left = 526
+    Top = 739
+    Width = 136
+    Height = 16
+    Alignment = taRightJustify
+    Caption = 'LowerRight = (639, 479)'
+  end
+  object CheckBoxStretch: TCheckBox
+    Left = 8
+    Top = 192
+    Width = 129
+    Height = 25
+    Caption = 'Stretch Image'
+    TabOrder = 8
+    Visible = False
+    OnClick = CheckBoxStretchClick
+  end
+  object GroupBoxRed: TGroupBox
+    Left = 168
+    Top = 59
+    Width = 400
+    Height = 46
+    Caption = 'Red Mask'
+    Font.CharSet = fcsLatin1
+    Font.Color = clRed
+    Font.Height = 11
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 9
+    TabStop = True
+    object CheckBoxR128: TCheckBox
+      Left = 10
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxR64: TCheckBox
+      Left = 35
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxR32: TCheckBox
+      Left = 60
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxR16: TCheckBox
+      Left = 85
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxR8: TCheckBox
+      Left = 120
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxR4: TCheckBox
+      Left = 145
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 5
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxR2: TCheckBox
+      Left = 170
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 6
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxR1: TCheckBox
+      Left = 195
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 7
+      OnClick = CheckBoxRGBClick
+    end
+    object LabelHexR: TLabel
+      Left = 275
+      Top = 18
+      Width = 12
+      Height = 13
+      Caption = 'FF'
+    end
+    object LabelDecR: TLabel
+      Left = 235
+      Top = 18
+      Width = 18
+      Height = 13
+      Alignment = taRightJustify
+      Caption = '255'
+    end
+    object LabelComboR: TLabel
+      Left = 340
+      Top = 18
+      Width = 18
+      Height = 13
+      Alignment = taRightJustify
+      Caption = '256'
+    end
+  end
+  object PanelPowersOfTwo: TPanel
+    Left = 168
+    Top = 33
+    Width = 401
+    Height = 27
+    BevelOuter = bvNone
+    TabOrder = 10
+    object Label128: TLabel
+      Left = 6
+      Top = 7
+      Width = 21
+      Height = 13
+      Caption = '128'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label64: TLabel
+      Left = 35
+      Top = 7
+      Width = 14
+      Height = 13
+      Caption = '64'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label32: TLabel
+      Left = 60
+      Top = 7
+      Width = 14
+      Height = 13
+      Caption = '32'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label16: TLabel
+      Left = 85
+      Top = 7
+      Width = 14
+      Height = 13
+      Caption = '16'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 124
+      Top = 7
+      Width = 7
+      Height = 13
+      Caption = '8'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 149
+      Top = 7
+      Width = 7
+      Height = 13
+      Caption = '4'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 174
+      Top = 7
+      Width = 7
+      Height = 13
+      Caption = '2'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LabelOne: TLabel
+      Left = 199
+      Top = 7
+      Width = 7
+      Height = 13
+      Caption = '1'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LabelDec: TLabel
+      Left = 233
+      Top = 7
+      Width = 23
+      Height = 13
+      Caption = 'Dec'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LabelHex: TLabel
+      Left = 271
+      Top = 6
+      Width = 22
+      Height = 13
+      Caption = 'Hex'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object LabelCombinations: TLabel
+      Left = 315
+      Top = 6
+      Width = 75
+      Height = 13
+      Caption = 'Combinations'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object GroupBoxGreen: TGroupBox
+    Left = 168
+    Top = 105
+    Width = 400
+    Height = 46
+    Caption = 'Green Mask'
+    Font.CharSet = fcsLatin1
+    Font.Color = clGreen
+    Font.Height = 11
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 11
+    TabStop = True
+    object CheckBoxG128: TCheckBox
+      Left = 10
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxG64: TCheckBox
+      Left = 35
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxG32: TCheckBox
+      Left = 60
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxG16: TCheckBox
+      Left = 85
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxG8: TCheckBox
+      Left = 120
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxG4: TCheckBox
+      Left = 145
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 5
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxG2: TCheckBox
+      Left = 170
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 6
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxG1: TCheckBox
+      Left = 195
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 7
+      OnClick = CheckBoxRGBClick
+    end
+    object LabelHexG: TLabel
+      Left = 275
+      Top = 18
+      Width = 12
+      Height = 13
+      Caption = 'FF'
+    end
+    object LabelDecG: TLabel
+      Left = 235
+      Top = 18
+      Width = 18
+      Height = 13
+      Alignment = taRightJustify
+      Caption = '255'
+    end
+    object LabelComboG: TLabel
+      Left = 340
+      Top = 18
+      Width = 18
+      Height = 13
+      Alignment = taRightJustify
+      Caption = '256'
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 168
+    Top = 151
+    Width = 400
+    Height = 46
+    Caption = 'Blue Mask'
+    Font.CharSet = fcsLatin1
+    Font.Color = clBlue
+    Font.Height = 11
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 12
+    TabStop = True
+    object CheckBoxB128: TCheckBox
+      Left = 10
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxB64: TCheckBox
+      Left = 35
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxB32: TCheckBox
+      Left = 60
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxB16: TCheckBox
+      Left = 85
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxB8: TCheckBox
+      Left = 120
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxB4: TCheckBox
+      Left = 145
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 5
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxB2: TCheckBox
+      Left = 170
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 6
+      OnClick = CheckBoxRGBClick
+    end
+    object CheckBoxB1: TCheckBox
+      Left = 195
+      Top = 15
+      Width = 22
+      Height = 27
+      Checked = True
+      State = cbChecked
+      TabOrder = 7
+      OnClick = CheckBoxRGBClick
+    end
+    object LabelHexB: TLabel
+      Left = 275
+      Top = 18
+      Width = 12
+      Height = 13
+      Caption = 'FF'
+    end
+    object LabelDecB: TLabel
+      Left = 235
+      Top = 18
+      Width = 18
+      Height = 13
+      Alignment = taRightJustify
+      Caption = '255'
+    end
+    object LabelComboB: TLabel
+      Left = 340
+      Top = 18
+      Width = 18
+      Height = 13
+      Alignment = taRightJustify
+      Caption = '256'
+    end
+  end
+  object LabelComboRGB: TLabel
+    Left = 462
+    Top = 198
+    Width = 64
+    Height = 13
+    Alignment = taRightJustify
+    Caption = '16,777,216'
+    Font.CharSet = fcsLatin1
+    Font.Color = clBlack
+    Font.Height = 11
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object CheckBoxContrast: TCheckBox
+    Left = 177
+    Top = 196
+    Width = 144
+    Height = 25
+    Caption = 'Enhance Contrast'
+    TabOrder = 14
+    OnClick = CheckBoxRGBClick
+  end
+  object PanelCoordinates: TPanel
+    Left = 7
+    Top = 738
+    Width = 418
+    Height = 57
+    BevelOuter = bvNone
+    TabOrder = 15
+    object LabelXY: TLabel
+      Left = 5
+      Top = 4
+      Width = 41
+      Height = 16
+      Caption = '(X, Y) ='
+    end
+    object LabelOriginal: TLabel
+      Left = 5
+      Top = 22
+      Width = 105
+      Height = 16
+      Caption = 'Original(R, G, B) ='
+    end
+    object LabelMasked: TLabel
+      Left = 5
+      Top = 40
+      Width = 108
+      Height = 16
+      Caption = 'Masked(R, G, B) ='
+    end
+  end
+  object LabelRGBTriples: TLabel
+    Left = 380
+    Top = 213
+    Width = 147
+    Height = 16
+    Alignment = taRightJustify
+    Caption = 'RGB Triples = NNNNNN'
+  end
+  object ButtonAllOn: TButton
+    Left = 77
+    Top = 71
+    Width = 75
+    Height = 25
+    Caption = 'All On'
+    TabOrder = 17
+    OnClick = ButtonAllOnClick
+  end
+  object ButtonAllOff: TButton
+    Left = 77
+    Top = 101
+    Width = 75
+    Height = 25
+    Caption = 'All Off'
+    TabOrder = 18
+    OnClick = ButtonAllOffClick
+  end
+  object ButtonWrite: TButton
+    Left = 8
+    Top = 33
+    Width = 75
+    Height = 25
+    Caption = 'Write'
+    TabOrder = 19
+    OnClick = ButtonWriteClick
+  end
+  object OpenDialog: TOpenDialog
+    FilterIndex = 0
+    Height = 0
+    Title = 'Open'
+    Width = 0
+    Left = 616
+    Top = 8
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = 'bmp'
+    Filter = 'Bitmap (*.bmp)|*.bmp'
+    FilterIndex = 0
+    Height = 0
+    Title = 'Save'
+    Width = 0
+    Left = 616
+    Top = 40
+  end
+end
